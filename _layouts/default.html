@@ -2,9 +2,10 @@
 <html lang="{{ site.lang | default: "en-US" }}">
 
     <!-- Embed -->
+    <title>Zillion's Documentation</title>
     <meta name="description" content="Zillion's Documentation">
-    <meta id="icon" rel="icon" href="https://github.com/ZillionMuffin/Docs/blob/gh-pages/assets/icon.png" type="image/x-icon">
-    <link rel="icon" href="https://github.com/ZillionMuffin/Docs/blob/gh-pages/assets/icon.png">
+    <meta id="icon" rel="icon" href="assets/Paper.png" type="image/x-icon">
+    <link rel="icon" href="assets/Paper.png">
     <meta name="theme-color" content="#3BD2D6"> <!--Discord Embed color-->
     <!-- Embed -->
   
@@ -33,7 +34,7 @@
   <body>
 
     <!-- HEADER -->
-        <h1 id="project_title">{{ site.title | default: site.github.repository_name }}</h1>
+        <h1>Zillion's Documentation</h1>
     <br>
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer" align="center" text-align="left" style="border-radius: 10px; width: 800px;">
@@ -41,7 +42,21 @@
         {{ content }}
       </section>
     </div>
+<br>
   </body>
+
+    <div id="main_content_wrap" class="outer" align="center" text-align="left" style="border-radius: 10px; width: 800px;" >
+    <h3>You can also check:</h3>
+   {% assign doclist = site.pages | sort: 'url'  %}
+    <ul>
+       {% for doc in doclist %}
+            {% if doc.name contains '.md' or doc.name contains '.html' %}
+                <li><a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.url }}</a></li>
+            {% endif %}
+       {% endfor %}
+    </ul>
+    </div>
+
 </html>
 
 <style>
