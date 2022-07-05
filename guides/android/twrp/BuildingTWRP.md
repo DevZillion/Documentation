@@ -37,6 +37,7 @@ repo sync
 
 ### Setting up TWRP for building.
 > - Get the right stuff inside .repo/local_manifest/roomservice.xml
+
 ```xml
 <manifest>
   <project path="device/<brand>/<device>" name="<repo-owner-name>/<repo-name>" remote="github" revision="<branch>"/>
@@ -44,13 +45,14 @@ repo sync
 ```
 
 > - Here is an example of a roomservice.xml
+
 ```xml
 <manifest>
   <project path="device/samsung/a31" name="Galaxy-MT6768/android_device_samsung_a31nsxx" remote="github" revision="android-11"/>
   <project path="device/samsung/a41" name="Galaxy-MT6768/android_device_samsung_a41xx" remote="github" revision="android-11"/>
 </manifest>
-
 ```
+
 ### Setting up device trees.
 ```sh
 repo sync --force-sync device/<brand>/<device>
