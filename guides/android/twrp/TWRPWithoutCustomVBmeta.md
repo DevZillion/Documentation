@@ -27,9 +27,11 @@ BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flag 0
 ### Setting up the device tree in general
 Remove any ``mkbootimg`` file if it is present.
 
-Be sure to remove this reference to a custom bootimg.mk in the device device tree like:
+Add this [bootimg.mk](https://raw.githubusercontent.com/Galaxy-MT6768/android_device_samsung_a31nsxx/android-12/bootimg.mk) to your device tree.
+
+Be sure to reference to it in the device tree like:
 ```mk
-# BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/bootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/bootimg.mk
 ```
 
 Also check that these flags are correct and corresponding to your device:
